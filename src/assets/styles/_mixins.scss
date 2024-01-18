@@ -1,0 +1,7 @@
+@mixin for-small-devices {
+    @media (max-width: $medium-devices) {@content;}
+}
+
+@mixin for-medium-devices {
+    @media (max-width: $large-devices) {@content;}
+}
