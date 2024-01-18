@@ -1,9 +1,10 @@
 <script setup lang="ts">
+  import Header  from './components/GPHeader.vue';
 
 </script>
 
-<template>
-  <h1>Teste</h1>
+<template>  
+  <Header></Header>
 </template>
 
 <style scoped>
