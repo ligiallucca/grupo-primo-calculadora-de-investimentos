@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import Header  from './components/GPHeader.vue';
-
+import Header from './components/GPHeader.vue'
+import Banner from './components/GPBanner.vue'
 </script>
 
-<template>  
+<template>
   <Header></Header>
+  <Banner></Banner>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
