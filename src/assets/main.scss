@@ -1,2 +1,12 @@
 @import './styles/variables';
 @import './styles/mixins';
+
+body {
+  letter-spacing: 1px;
+  font-family: 'Figtree', sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
