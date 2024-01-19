@@ -14,7 +14,7 @@
         background-color: $dark;
         @include for-small-devices {
             height: 270px;
-            padding: 32px 88px;
+            padding: 88px 32px;
         }
         h1 {
             font-size: 48px;
