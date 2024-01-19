@@ -23,7 +23,5 @@ header {
       height: 22px;
     }
   }
-
 }
-
 </style>
