@@ -1,8 +1,36 @@
+<script lang="ts" setup>
+  defineProps({
+  modelValue: {
+    type: String,
+    default: "",
+  },
+  label: String,
+  dataKind: String
+});
+</script>
+
 <template>
-  <div class="form-field">
-    <label>Quanto você gostaria de investir? </label>
-    <input class="gp-slider" type="range" min="0" max="100" value="0" />
-  </div>
+    <label>{{ label }}</label>
+    <input
+      v-if="dataKind === 'month'"
+      type="range"
+      min="24"
+      max="240"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target?.value)"
+      v-bind="$attrs"
+    />
+
+    <input
+      v-else
+      type="range"
+      min="100"
+      max="1000000"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target?.value)"
+      v-bind="$attrs"
+    />
+
 </template>
 <style lang="scss" scoped>
 @import '../assets/main.scss';
@@ -15,7 +43,7 @@ label {
   width: 100%;
 }
 input[type='range'] {
-  -webkit-appearance: none;
+  appearance: none;
   margin-right: 15px;
   height: 7px;
   background: $grey-light;
@@ -46,7 +74,7 @@ input[type='range']::-webkit-slider-runnable-track {
 }
 
 input[type='range']::-moz-range-thumb {
-  -webkit-appearance: none;
+  appearance: none;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -56,7 +84,7 @@ input[type='range']::-moz-range-thumb {
 }
 
 input[type='range']::-ms-thumb {
-  -webkit-appearance: none;
+  appearance: none;
   height: 20px;
   width: 20px;
   border-radius: 50%;
