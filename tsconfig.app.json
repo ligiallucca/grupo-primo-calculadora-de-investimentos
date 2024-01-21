@@ -7,7 +7,13 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/components": ["./src/components/*"],
+      "@/pages": ["./src/pages/*"],
+      "@/utils": ["./src/utils/*"],
+      "@/template": ["./src/templates/*"],
+      "@/model": ["./src/model/*"],
+      "@/assets": ["src/assets/*"]
     }
   }
 }

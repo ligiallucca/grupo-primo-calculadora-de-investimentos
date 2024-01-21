@@ -1,51 +1,24 @@
 <script setup lang="ts">
 import { watch } from 'vue';
 import { store } from '@/store';
-import GPForm from '../components/GPForm.vue';
-import GPResults from '../components/GPResults.vue';
-import type { InvestmentFormData } from '@/interfaces/InvestmentFormData';
+import GPForm from '@/components/GPForm.vue';
+import GPResults from '@/components/GPResults.vue';
+import { calcTotalAmount }  from '@/utils/calculator';
+import { TaxesValues } from '@/model/Taxes';
+
+
 
 watch(() => store.investmentFormData, () => getResults() )
 
 const formData = store.investmentFormData;
-const taxes = store.taxes
 
 const getResults = () => {
-  const totalArca = calcTotalAmount(formData, taxes.arcaTax); 
-  const totalSelic = calcTotalAmount(formData, taxes.selicTax);
+  const totalArca = calcTotalAmount(formData, TaxesValues.ARCA); 
+  const totalSelic = calcTotalAmount(formData, TaxesValues.SELIC);
   store.results.arcaResult = totalArca;
   store.results.selicResult = totalSelic;
 }
 
-
-const calcTotalAmount = (formData: InvestmentFormData,  tax: number): number =>  {
-  const simpleInterestAmount = calcSimpleInterest(formData, tax);
-  const compoundInterestAmount = calcCompoundInterest(formData, tax);
-  const totalAmonut = simpleInterestAmount + compoundInterestAmount;
-  return totalAmonut;  
-}
-
-const calcSimpleInterest = (formData: InvestmentFormData, tax: number, ) : number => {
-  const monthlyTax = tax / 12;
-  const numberOfMonthsToNumber = parseFloat(formData.numberOfMonths);
-  const initialInvestimentToNumber = parseFloat(formData.initialInvestment);
-
-  
-  //qto rende so o valor inical em qtdMeses
-  const simpleInterestResult = initialInvestimentToNumber * (1 + monthlyTax) ** numberOfMonthsToNumber; 
-
-  return simpleInterestResult;
-}
-
-const calcCompoundInterest = (formData:InvestmentFormData, tax: number ) : number => {
-  const monthlyTax = tax / 12;
-  const numberOfMonthsToNumber = parseFloat(formData.numberOfMonths);
-  const monthlyInvestmentToNumber = parseFloat(formData.monthlyValue);
-  
-  //qto rende so o valor inical em qtdMeses
-  const compoundInterestResult = monthlyInvestmentToNumber * ((1 + monthlyTax) ** numberOfMonthsToNumber -1) / monthlyTax; 
-  return compoundInterestResult;
-}
 </script>
 
 <template>
