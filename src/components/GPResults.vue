@@ -1,13 +1,23 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { store } from '@/store';
+import { watch } from 'vue';
+
+watch(() => store.results, () => {} )
+
+  const numberOfMonths = store.investmentFormData.numberOfMonths;
+  const arcaResult = store.results.arcaResult.toFixed(2);
+  const selicResult = store.results.selicResult.toFixed(2);
+
+</script>
 <template>
   <section class="results">
     <div class="results-box">
-      <p>Em 24 meses você teria</p>
-      <div class="result">R$ 1.020,00</div>
+      <p>{{`Em ${numberOfMonths} meses você teria`}}</p>
+      <div class="result">{{ `R$ ${arcaResult}` }}</div>
       <hr class="line-marker" />
     </div>
     <div class="observation-box">
-      <p>taxa selic:<span>9,25%</span></p>
+      <p>taxa selic:<span>9,25%</span>{{ selicResult }}</p>
       <span></span>
     </div>
     <div class="observation-box">
@@ -59,6 +69,7 @@
         font-size: 18px;
         font-weight: 800;
         margin-left: 16px;
+        text-transform: lowercase;
       }
     }
   }

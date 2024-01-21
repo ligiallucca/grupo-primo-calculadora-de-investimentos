@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import Header from './components/GPHeader.vue'
-import Banner from './components/GPBanner.vue'
-import Main from './components/GPMain.vue'
+import GPHome from './templates/GPHome.vue'
 </script>
 
 <template>
-  <Header></Header>
-  <Banner></Banner>
-  <Main></Main>
+  <GPHome></GPHome>
 </template>
 
 <style scoped></style>
