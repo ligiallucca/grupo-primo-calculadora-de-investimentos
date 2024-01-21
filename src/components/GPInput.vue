@@ -14,6 +14,15 @@ defineProps({
     <div class="input-wrapper">
       <span v-if="dataKind !== 'month'">R$</span>
       <input
+        v-if="dataKind === 'month'"
+        type="text"
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target?.value)"
+        v-bind="$attrs"
+        :class="dataKind === 'month' ? 'input-month' : ''"
+      />
+      <input
+        v-else
         type="text"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target?.value)"
