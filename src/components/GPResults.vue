@@ -1,23 +1,22 @@
 <script lang="ts" setup>
 import { store } from '@/store';
-import { watch } from 'vue';
-
-watch(() => store.results, () => {} )
-
-  const numberOfMonths = store.investmentFormData.numberOfMonths;
-  const arcaResult = store.results.arcaResult.toFixed(2);
-  const selicResult = store.results.selicResult.toFixed(2);
-
 </script>
 <template>
+
   <section class="results">
     <div class="results-box">
-      <p>{{`Em ${numberOfMonths} meses você teria`}}</p>
-      <div class="result">{{ `R$ ${arcaResult}` }}</div>
+      <p>{{`Em ${store.investmentFormData.numberOfMonths} meses investindo no 
+      fundo Arca você teria`}}</p>
+      <div class="result">{{ `R$ ${store.results.arcaResult.toFixed(2)}` }}</div>
       <hr class="line-marker" />
     </div>
+    <div class="observation-box selic">
+      <p>Com a rentabilidade da Selic você teria apenas:  </p>
+      <p class="margin-top-8 text-bold"><span>R$ </span>{{ store.results.selicResult.toFixed(2) }}</p>
+    </div>
     <div class="observation-box">
-      <p>taxa selic:<span>9,25%</span>{{ selicResult }}</p>
+      
+      <p>taxa selic:<span>9,25%</span></p>
       <span></span>
     </div>
     <div class="observation-box">
@@ -40,13 +39,14 @@ watch(() => store.results, () => {} )
   width: 660px;
   .results-box {
     p {
-      font-size: 32px;
-      font-weight: 600;
+      font-size: 26px;
+      font-weight: 500;
       color: $dark;
     }
     .result {
-      font-size: 88px;
+      font-size: 72px;
       font-weight: 600;
+      margin-top: 16px;
       text-transform: capitalize;
     }
 
@@ -68,8 +68,6 @@ watch(() => store.results, () => {} )
       span {
         font-size: 18px;
         font-weight: 800;
-        margin-left: 16px;
-        text-transform: lowercase;
       }
     }
   }

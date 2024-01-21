@@ -8,9 +8,8 @@
 <style lang="scss" scoped>
 @import './../assets/main.scss';
 header {
-  width: 100%;
   display: flex;
-  padding: 32px 120px;
+  padding: 16px 120px;
   justify-content: start;
   @include for-small-devices {
     padding: 32px;
