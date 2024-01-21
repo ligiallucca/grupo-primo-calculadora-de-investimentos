@@ -13,6 +13,7 @@ header {
   justify-content: start;
   @include for-small-devices {
     padding: 32px;
+    width: 100vw;
   }
   img {
     width: 176px;

@@ -37,6 +37,9 @@ import { store } from '@/store';
 @import '../assets/main.scss';
 .results {
   width: 660px;
+  @include for-small-devices {
+    width: 500px;
+  }
   .results-box {
     p {
       font-size: 26px;
