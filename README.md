@@ -12,8 +12,8 @@ Este é um projeto de teste para vaga de FrontEnd para o Grupo Primo, objetivo �
 
 1. Desenvolvimento do layout proposto no Figma.  [Ler documentação](./documentation/PHASE_ONE_LAYOUT.md)
 2. Implementação da lógica;  [Ler documentação](./documentation/PHASE_TWO_APLICATION_LOGIC.md)
-3. Testes unitários;
-4. Personalização do layout proposto;
+3. Testes unitários; [Ler documentação](./documentation/PHASE_THREE_UNIT_TESTS.md)
+4. Personalização do layout proposto; [Ler documentação](./documentation/PHASE_FOUR.md)
 
 
 ## Decisões técnicas
@@ -25,58 +25,37 @@ SASS como processador de CSS para otimizar o uso de variáveis e funções, repe
 
 
 
-
-
-
-
-# calc-invest-gp
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
+## Setup da IDE Recomendado
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Como rodar o projeto
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilar e manter o "hot-reload"
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Checagem de Tipo, Compilar e Minificar para Produção
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Rodando os testes [Vitest](https://vitest.dev/)
 
 ```sh
 npm run test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Lint com [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
