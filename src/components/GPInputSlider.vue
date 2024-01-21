@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  defineProps({
+defineProps({
   modelValue: {
     type: String,
     default: "",
@@ -7,6 +7,8 @@
   label: String,
   dataKind: String
 });
+
+
 </script>
 
 <template>
@@ -36,79 +38,34 @@
 @import '../assets/main.scss';
 label {
   color: $dark;
-  font-size: 28px;
-  margin-bottom: 32px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 .gp-slider {
   width: 100%;
 }
-input[type='range'] {
-  appearance: none;
+
+input[type="range"] {
   margin-right: 15px;
   height: 7px;
-  background: $grey-light;
   border-radius: 5px;
-  background-repeat: no-repeat;
   accent-color: $green;
+  border: none;
+
 }
 
-[dir='rtl'] input[type='range'] {
-  background: $green;
-  background-image: linear-gradient($green, $green);
-  background-repeat: no-repeat;
-}
-
-/* Input Thumb */
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
+input[type="range"]::-webkit-slider-thumb {
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background: $green;
-  cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
-input[type='range']::-webkit-slider-runnable-track {
-  background-image: linear-gradient($green, $green);
-  height: 20px;
-}
-
-input[type='range']::-moz-range-thumb {
-  appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: $green;
-  background-image: linear-gradient($green, $green);
-  cursor: pointer;
-}
-
-input[type='range']::-ms-thumb {
-  appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: $green;
-  cursor: pointer;
-}
-
-input[type='range']::-webkit-slider-thumb:hover {
-  background: darken($color: $green, $amount: 10);
-}
-
-input[type='range']::-moz-range-thumb:hover {
-  background: darken($color: $green, $amount: 10);
-}
-
-input[type='range']::-ms-thumb:hover {
-  background: darken($color: $green, $amount: 10);
-}
-
-/* Input Track */
-input[type='range']::-webkit-slider-runnable-track {
-  -webkit-appearance: none;
+input[type=range]::-webkit-slider-runnable-track  {
   box-shadow: none;
   border: none;
   background: transparent;
 }
+
 </style>
