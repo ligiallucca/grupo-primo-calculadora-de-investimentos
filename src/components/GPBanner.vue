@@ -15,11 +15,7 @@
   background-size: cover;
   background-color: $dark;
 
-  @include for-small-devices {
-    // height: 270px;
-    height: 100%;
-    padding: 88px 32px;
-  }
+
   .backdrop {
     background-color: $dark;
     height: 100%;
