@@ -18,11 +18,9 @@ const formData: Ref<InvestmentFormData> = ref({
 
 const submitInvestimentFormData = (e: Event): void =>  {
   e.preventDefault();
-  console.log('orweoptuierto', formData);
   store.investmentFormData.initialInvestment = formData.value.initialInvestment;
   store.investmentFormData.monthlyValue = formData.value.monthlyValue;
   store.investmentFormData.numberOfMonths = formData.value.numberOfMonths;
-  console.log("🚀 ~ submitInvestimentFormData ~ store.investmentFormData:", store.investmentFormData)
   emit('formSubmited', formData);
   
 }
