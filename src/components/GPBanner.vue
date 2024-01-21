@@ -1,20 +1,30 @@
 <template>
   <div class="banner">
-    <h1>Simulador de investimento</h1>
-    <p>Descubra o quanto você pode economizar.</p>
+    <div class="backdrop">
+      <h1>Simulador de investimento</h1>
+      <p>Descubra o quanto você pode economizar.</p>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import '../assets/main.scss';
 .banner {
-  width: 100%;
-  height: 347px;
+  // height: 347px;
   color: $white;
-  padding: 80px 120px;
+  background-image: url('../assets/images/header-bg.jpg');
+  background-size: cover;
   background-color: $dark;
+
   @include for-small-devices {
-    height: 270px;
+    // height: 270px;
+    height: 100%;
     padding: 88px 32px;
+  }
+  .backdrop {
+    background-color: $dark;
+    height: 100%;
+    padding: 80px 120px;
+    opacity: 0.9;
   }
   h1 {
     font-size: 48px;
