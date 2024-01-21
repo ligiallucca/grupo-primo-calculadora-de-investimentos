@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GPHome from './templates/GPHome.vue'
+import GPHome from './templates/GPHome.vue';
 </script>
 
 <template>

@@ -1,18 +1,19 @@
 import { reactive } from 'vue';
-import type { Store } from './interfaces/InvestmentFormData';
+import type { Store } from './model/Store';
+import { TaxesValues } from './model/Taxes';
 
 export const store = reactive<Store>({
-    investmentFormData: {
-        initialInvestment: '100',
-        monthlyValue: '100' ,
-        numberOfMonths: '24' ,
-    },
-    results: {
-        selicResult: 0,
-        arcaResult: 0,
-    },
-    taxes: {
-        selicTax: 0.0925,
-        arcaTax: 0.18,
-    },
-});
+  investmentFormData: {
+    initialInvestment: '100',
+    monthlyValue: '100',
+    numberOfMonths: '24'
+  },
+  results: {
+    arcaResult: 0,
+    selicResult: 0
+  },
+  taxes: {
+    arcaTax: TaxesValues.ARCA,
+    selicTax: TaxesValues.SELIC
+  }
+})
